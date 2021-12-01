@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="WIDTH=DEVICE-WIDTH, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style_CV.css" />
+    <title>My CV</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <img src="./imgs/pic2.jpg" width="60%" />
+        <img src="./imgs/pic1.jpg" width="60%" />
+        <img src="imgs/pic3.jpg" width="60%" />
+      </div>
+      <div class="content">
+        <div class="header">
+          <div><span>Curriculum Vitae - Chițu Mara</span></div>
+          <div>
+            <a
+              href="PDF CV/CV Mara Chitu.pdf"
+              target="_blank"
+              class="pdf"
+              download
+              >(Download CV)</a
+            >
+          </div>
+        </div>
+        <div class="CV">
+          <hr />
+          <div class="title">Profile</div>
+          <div class="info">
+            Hello! My name is Mara Chițu. I am an economist with 9 years
+            experience in the field, eagered to switch my path from web user to
+            web developer. I am highly interested in Web Development & Project
+            Management and passionate about travelling, flowers, photography,
+            design, arhitecture and anything related to it.
+          </div>
+          <div>
+            <hr />
+            <button type="button" class="collapsible">Education</button>
+            <div class="info-col">
+              <div class="years"><p>2010-2012</p></div>
+              <div class="organisation">
+                <p>
+                  The Bucharest Academy of Economic Studies, Faculty of
+                  Management
+                </p>
+              </div>
+              <div class="degree"><p>Master’s degree</p></div>
+              <div class="field"><p>Business Management</p></div>
+              <div class="years"><p>2007-2010</p></div>
+              <div class="organisation">
+                <p>
+                  The Bucharest Academy of Economic Studies, Faculty of
+                  Management
+                </p>
+              </div>
+              <div class="degree"><p>Bachelor’s degree</p></div>
+              <div class="field"><p>Management</p></div>
+              <div class="years"><p>2003-2007</p></div>
+              <div class="organisation">
+                <p>Alexandru Ioan Cuza High School - Ploiesti</p>
+              </div>
+              <div class="degree"><p>High School diploma</p></div>
+              <div class="field"><p>Mathematics - Informatics</p></div>
+            </div>
+          </div>
+          <div>
+            <hr />
+            <button type="button" class="collapsible">Experience</button>
+            <div class="info-col">
+              <div class="years"><p>2016-Present</p></div>
+              <div class="organisation">
+                <p>Public Finance Administration of Prahova Region</p>
+              </div>
+              <div class="field"><p>Inspector</p></div>
+              <div class="years"><p>2014-2016</p></div>
+              <div class="organisation">
+                <p>
+                  S.C. IPIP S.A. - The Engineering and Design Institute for Oil
+                  Refineries and Petrochemical Plants
+                </p>
+              </div>
+              <div class="field"><p>Planning Specialist</p></div>
+              <div class="years"><p>2012-2014</p></div>
+              <div class="organisation">
+                <p>
+                  S.C. IPIP S.A. - The Engineering and Design Institute for Oil
+                  Refineries and Petrochemical Plants
+                </p>
+              </div>
+              <div class="field"><p>Contract Analyst</p></div>
+            </div>
+          </div>
+          <hr />
+          <div>
+            <div class="title">Recommendation Letters</div>
+            <div class="letters">
+              <div class="First letter">
+                <button id="buttonLetter1">From the Commercial Manager</button>
+                <div id="modal1" class="modal">
+                  <div class="modal-content">
+                    <span id="close1" class="closeModal">&times;</span>
+                    <img
+                      src="./Recommendation letters/First rec letter.png"
+                      width="100%"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div id="Second letter">
+                <button id="buttonLetter2">From the Head of Department</button>
+                <div id="modal2" class="modal">
+                  <div class="modal-content">
+                    <span id="close2" class="closeModal">&times;</span>
+                    <img
+                      src="./Recommendation letters/Second rec letter.png"
+                      width="100%"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var modal1 = document.getElementById("modal1");
+      var btn1 = document.getElementById("buttonLetter1");
+      var span1 = document.getElementById("close1");
+      btn1.onclick = function () {
+        modal1.style.display = "block";
+      };
+      span1.onclick = function () {
+        modal1.style.display = "none";
+      };
+
+      var modal2 = document.getElementById("modal2");
+      var btn2 = document.getElementById("buttonLetter2");
+      var span2 = document.getElementById("close2");
+      btn2.onclick = function () {
+        modal2.style.display = "block";
+      };
+      span2.onclick = function () {
+        modal2.style.display = "none";
+      };
+      window.onclick = function (event) {
+        if (event.target == modal1) {
+          modal1.style.display = "none";
+        } else if (event.target == modal2) {
+          modal2.style.display = "none";
+        }
+      };
+    </script>
+    <script>
+      var coll = document.getElementsByClassName("collapsible");
+      var i;
+      for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var content = this.nextElementSibling;
+          if (content.style.display === "block") {
+            content.style.display = "none";
+          } else {
+            content.style.display = "block";
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
